@@ -1,0 +1,108 @@
+.fade-enter {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fade-exit.fade-exit-a {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease-out;
+}
+
+/* bouncing-options */
+@keyframes bounceAndColorChange {
+  0% {
+    transform: scale(1);
+    transform-origin: center;
+    stroke: #fc5151;
+    box-shadow: 0 0 50px #fc5151;
+  }
+  25% {
+    transform: scale(1.1);
+    transform-origin: center;
+    stroke: #2bd1ee;
+    box-shadow: 0 0 50px #2bd1ee;
+  }
+  50% {
+    transform: scale(1.2);
+    transform-origin: center;
+    stroke: #58fa58;
+    box-shadow: 0 0 50px #58fa58;
+  }
+  75% {
+    transform: scale(1.1);
+    transform-origin: center;
+    stroke: #4a4dff;
+    box-shadow: 0 0 50px #4a4dff;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: center;
+    stroke: #ff5bf7;
+    box-shadow: 0 0 50px #ff5bf7;
+  }
+}
+
+.bouncing-div {
+  animation: bounceAndColorChange 2s ease-in-out infinite;
+  stroke: #424242;
+}
+.cancel-animation {
+  animation-name: none !important;
+}
+
+@keyframes bounce {
+  10% {
+    transform: scaleY(0.3); /* start by scaling to 30% */
+  }
+
+  30% {
+    transform: scaleY(1); /* scale up to 100% */
+  }
+
+  60% {
+    transform: scaleY(0.5); /* scale down to 50% */
+  }
+
+  80% {
+    transform: scaleY(0.75); /* scale up to 75% */
+  }
+
+  100% {
+    transform: scaleY(0.6); /* scale down to 60% */
+  }
+}
+
+.speaking-icon {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 13px;
+  height: 13px;
+}
+
+.speaking-icon span {
+  width: 3px;
+  height: 100%;
+  border-radius: 3px;
+  animation: bounce 2.2s ease infinite alternate;
+  content: '';
+}
+
+.speaking-icon span:nth-of-type(2) {
+  animation-delay: -2.2s; /* Start at the end of animation */
+}
+.speaking-icon span:nth-of-type(3) {
+  animation-delay: -3.7s; /* Start mid-way of return of animation */
+}
